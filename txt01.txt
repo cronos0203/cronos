@@ -1,0 +1,205 @@
+
+1.manifest.xml文件查看代码，assembly的path去掉bin
+2.manifest.xml文件属性始终复制到输出目录
+3.窗体的load方法需要加载
+
+
+
+全局变量：_-开头
+局部变量：小写开头
+
+
+245226390
+
+hfsoftstaff@8816
+
+next：
+
+1.将style提出到style.xaml文件中
+
+
+
+
+
+查询第1000~1030条记录
+count=30，index=1030
+
+"SELECT * FROM hedge_huafeng_codetable hf1,( SELECT TOP "+count+" serialNo FROM ("+
+                "SELECT TOP "+index+" serialNo FROM hedge_huafeng_codetable ORDER BY serialNo ASC"+
+                ") hf ORDER BY hf.serialNo DESC  ) hf2 where hf1.serialNo=hf2.serialNo and nIdnum like '%'+'" + stockInfo.NIdnum +
+                "'+'%' and securities_code like '%'+'" + stockInfo.SecuritiesCode +
+                "'+'%' and securities_name like '%'+'" + stockInfo.SecuritiesName +
+                "'+'%' and securities_initial like '%'+'" + stockInfo.SecuritiesInitial +
+                "'+'%' and securities_type like '%'+'" + stockInfo.SecuritiesType +
+                "'+'%' and market_type like '%'+'" + stockInfo.MarketType +
+                "'+'%' and csrc_industry like '%'+'" + stockInfo.CsrcIndustry +
+                "'+'%' and wind_industry like '%'+'" + stockInfo.WindIndustry +
+                "'+'%' and subscribed like '%'+'" + subscribe +
+                "'+'%' and enabled like '%'+'" + enabled +
+                "'+'%' "
+
+
+建立对象，对象转换。
+
+一个更新服务监控数据信息的方法
+
+界面上，用模板绑定
+
+359	1
+364
+370	1
+372	1
+373	1
+374	1
+
+
+
+
+
+
+
+
+
+//1.监控信息移到服务监控下
+
+
+3.监控信息格局保存
+
+
+
+
+
+
+//2.错误信息加入导出功能
+
+//4.详细运行状态页面布局调整，加入硬件状态
+
+//5.华风代码表中加入财务信息：股本信息，净资产，收益
+
+//6.服务监控页面，正常状态做成按钮，弹出细节状态，实例下可以展开
+//华风代码表中添加系统标的分组
+
+
+
+
+
+关闭所有的时候弹到首页。
+
+
+
+
+
+
+
+总体概况
+
+账户、策略、K线：服务器数、状态、cpu、内存；下属实例数、cpu、内存、各个监控内容的状态等
+
+
+
+设定配置表来判断信息是否要进行保存
+
+
+
+确定接口，，服务端
+
+
+服务端写入错误信息长度不够长
+
+
+
+
+客户端-->SessionCallbackl 客户端逻辑
+IceComminicationData是客户端和服务端的通信，用ice来写。
+
+1.客户端与服务端之间通信改造
+
+
+
+
+需要：
+
+节点端：cpu、内存
+
+交易通道：每笔成交响应时间
+
+
+华风代码表：分组，财务信息-->需要数据库改动
+
+
+1.界面绑定
+2.chart的绑定方法
+3.响应时间计算放在客户端，写入配置文件
+4.设置实例分配
+5.监控界面template
+7.华风代码表改造
+8.收盘价调整
+
+
+客户端与服务端之间的接口：
+1.getResponseTime(string name,int time)//获取计算后的各种响应时间
+2.实例分配方法
+3.
+
+
+1.HedgeGrid.Registry.sln
+新建类继承 serviceHandleBaseImpl实现其中方法（参照ServiceHandle）
+
+2.客户端与服务端连接
+服务端注册
+IHedgeAdapter adapter = communicationService.CreateAdapter("config/monitor_server.config", "MonitorDataServer", new OnClientConnectedHandle(DealClientConnected), new OnClientDisConnectedHandle(DealClientDisConnected));
+                adapter.RegisterFrameObject("MonitorDataPusher", new MonitorDataPusherImpl());
+
+客户端：
+
+在init中注册，。。。
+
+3.客户端更改
+。。。
+
+
+先启动客户端，再启动服务端，出错
+关闭服务端，无法跳入dealdisconnected方法
+
+
+nodeId
+
+instanceNumber
+
+nodeCPU
+nodeMemory
+
+instanceList[]
+
+instance:instanceId  instanceState
+
+节点端：Service-->Node-->instance-->
+
+
+加入时间字段，以此判断每日数据
+
+
+0144
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
